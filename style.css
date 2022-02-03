@@ -7,3 +7,71 @@
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
 }
+body
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #373737;
+}
+h3
+{
+  position: relative;
+  font-size: 20px;
+  color: #f9f9f9;
+  letter-spacing: 1px;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+#form
+{
+  position: relative;
+}
+#form #email
+{
+  width: 300px;
+  background: #292929;
+  outline: none;
+  border: none;
+  padding: 10px;
+  border-radius: 6px;
+  color: #fff;
+  font-size: 18px;
+}
+.inputBox
+{
+  position: relative;
+}
+#text
+{
+  display: block;
+  color: #000;
+  font-weight: 300;
+  font-style: italic;
+  padding: 5px;
+}
+#form.invalid .inputBox:before
+{
+  content: '';
+  position: absolute;
+  right: 12px;
+  top: 9px;
+  width: 24px;
+  height: 24px;
+  background: url("invalid.png");
+  background-size: cover;
+  z-index: 1000;
+}
+#form.valid .inputBox:before
+{
+  content: '';
+  position: absolute;
+  right: 12px;
+  top: 9px;
+  width: 24px;
+  height: 24px;
+  background: url("valid.png");
+  background-size: cover;
+  z-index: 1000;
+}

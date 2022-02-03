@@ -1,15 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" type="text/css" href="style.css">
-  <title>Document</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Document</title>
 </head>
 <body>
 
-  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+<div>
+    <h3>Email Validation Check</h3>
+    <form id="form" action="#">
+        <div class="inputBox">
+            <input
+                    type="text"
+                    id="email"
+                    placeholder="Enter Email Address"
+                    onkeyup="validation()"
+            >
+            <span id="text"></span>
+        </div>
+    </form>
+</div>
+
+<script type="text/javascript">
+    function validation() {
+        let form = document.getElementById('form'),
+            email = document.getElementById('email').value,
+            text = document.getElementById('text'),
+            pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+
+        if (email.match(pattern)) {
+            form.classList.add('valid');
+            form.classList.remove('invalid');
+            text.innerHTML = "Your Email Address in Valid."
+            text.style.color = "#00ff00"
+        } else {
+            form.classList.remove('valid');
+            form.classList.add('invalid');
+            text.innerHTML = "Please enter valid email."
+            text.style.color = "#ff0000"
+        }
+    }
+</script>
+
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>
 </html>
