@@ -13,65 +13,64 @@ body
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background: #373737;
+  background: #10131c;
 }
-h3
+.navigation
 {
   position: relative;
-  font-size: 20px;
-  color: #f9f9f9;
-  letter-spacing: 1px;
-  font-weight: 500;
-  margin-bottom: 5px;
+  width: 70px;
+  height: 70px;
+  background: #212532;
+  border-radius: 10px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s;
+  transition-delay: 0.8s;
 }
-#form
+.navigation.active
 {
-  position: relative;
+  width: 200px;
+  height: 200px;
+  transition-delay: 0s;
 }
-#form #email
+.navigation span
 {
-  width: 300px;
-  background: #292929;
-  outline: none;
-  border: none;
-  padding: 10px;
-  border-radius: 6px;
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+  border-radius: 50%;
+  transform: translate(calc(12px * var(--x)),calc(12px * var(--y)));
+  transition: transform 0.5s,width 0.5s, height 0.5s;
+  background: 0.5s;
+  transition-delay: calc(0.1s * var(--i));
+}
+.navigation.active span
+{
+  width: 45px;
+  height: 45px;
+  background: #333849;
+  transform: translate(calc(60px * var(--x)),calc(60px * var(--y)));
+}
+.navigation span ion-icon
+{
+  transition: 0.5s;
+  font-size: 0em;
+}
+.navigation.active span ion-icon
+{
+  font-size: 1.35em;
   color: #fff;
-  font-size: 18px;
 }
-.inputBox
+.navigation.active span:hover ion-icon
 {
-  position: relative;
-}
-#text
-{
-  display: block;
-  color: #000;
-  font-weight: 300;
-  font-style: italic;
-  padding: 5px;
-}
-#form.invalid .inputBox:before
-{
-  content: '';
-  position: absolute;
-  right: 12px;
-  top: 9px;
-  width: 24px;
-  height: 24px;
-  background: url("invalid.png");
-  background-size: cover;
-  z-index: 1000;
-}
-#form.valid .inputBox:before
-{
-  content: '';
-  position: absolute;
-  right: 12px;
-  top: 9px;
-  width: 24px;
-  height: 24px;
-  background: url("valid.png");
-  background-size: cover;
-  z-index: 1000;
+  color: #2dfc52;
+  filter: drop-shadow(0 0 2px #2dfc52)
+  drop-shadow(0 0 5px #2dfc52)
+  drop-shadow(0 0 15px #2dfc52);
 }

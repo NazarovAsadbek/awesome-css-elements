@@ -9,42 +9,24 @@
 </head>
 <body>
 
-<div>
-    <h3>Email Validation Check</h3>
-    <form id="form" action="#">
-        <div class="inputBox">
-            <input
-                    type="text"
-                    id="email"
-                    placeholder="Enter Email Address"
-                    onkeyup="validation()"
-            >
-            <span id="text"></span>
-        </div>
-    </form>
-</div>
+    <div class="navigation">
+        <span style="--i:0;--x:-1;--y:0"><ion-icon name="camera-outline"></ion-icon></span>
+        <span style="--i:1;--x:1;--y:0"><ion-icon name="diamond-outline"></ion-icon></span>
+        <span style="--i:2;--x:0;--y:-1"><ion-icon name="chatbubble-outline"></ion-icon></span>
+        <span style="--i:3;--x:0;--y:1"><ion-icon name="alarm-outline"></ion-icon></span>
+        <span style="--i:4;--x:1;--y:1"><ion-icon name="game-controller-outline"></ion-icon></span>
+        <span style="--i:5;--x:-1;--y:-1"><ion-icon name="moon-outline"></ion-icon></span>
+        <span style="--i:6;--x:0;--y:0"><ion-icon name="notifications-outline"></ion-icon></span>
+        <span style="--i:7;--x:-1;--y:1"><ion-icon name="water-outline"></ion-icon></span>
+        <span style="--i:8;--x:1;--y:-1"><ion-icon name="time-outline"></ion-icon></span>
+    </div>
 
-<script type="text/javascript">
-    function validation() {
-        let form = document.getElementById('form'),
-            email = document.getElementById('email').value,
-            text = document.getElementById('text'),
-            pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
-
-        if (email.match(pattern)) {
-            form.classList.add('valid');
-            form.classList.remove('invalid');
-            text.innerHTML = "Your Email Address in Valid."
-            text.style.color = "#00ff00"
-        } else {
-            form.classList.remove('valid');
-            form.classList.add('invalid');
-            text.innerHTML = "Please enter valid email."
-            text.style.color = "#ff0000"
+    <script type="text/javascript">
+        let navigation = document.querySelector('.navigation');
+        navigation.onclick = function () {
+            navigation.classList.toggle('active');
         }
-    }
-</script>
-
+    </script>
 <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>
