@@ -1,0 +1,34 @@
+Index: index.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><!DOCTYPE html>\r\n<html lang=\"en\">\r\n<head>\r\n    <meta charset=\"UTF-8\">\r\n    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\r\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\r\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"style.css\">\r\n    <title>Document</title>\r\n</head>\r\n<body>\r\n<div class=\"clock\">\r\n    <div class=\"hour\">\r\n        <div class=\"hr\" id=\"hr\"></div>\r\n    </div>\r\n    <div class=\"min\">\r\n        <div class=\"mn\" id=\"mn\"></div>\r\n    </div>\r\n    <div class=\"sec\">\r\n        <div class=\"sc\" id=\"sc\"></div>\r\n    </div>\r\n</div>\r\n\r\n<script type=\"text/javascript\">\r\n    const deg = 6;\r\n    const hr = document.querySelector('#hr'),\r\n        mn = document.querySelector('#mn'),\r\n        sc = document.querySelector('#sc');\r\n\r\n    setInterval(() => {\r\n        let day = new Date();\r\n        let hh = day.getHours() * 30;\r\n        let mm = day.getMinutes() * deg;\r\n        let ss = day.getSeconds() * deg;\r\n\r\n        hr.style.transform = `rotateZ(${(hh) + (mm / 12)}deg)`;\r\n        mn.style.transform = `rotateZ(${mm}deg)`;\r\n        sc.style.transform = `rotateZ(${ss}deg)`;\r\n    }, 1000)\r\n\r\n</script>\r\n</body>\r\n</html>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/index.html b/index.html
+--- a/index.html	(revision d1e1f918c8477c24c47b709c6f21f3db1297bb3e)
++++ b/index.html	(date 1643908440531)
+@@ -20,23 +20,6 @@
+     </div>
+ </div>
+ 
+-<script type="text/javascript">
+-    const deg = 6;
+-    const hr = document.querySelector('#hr'),
+-        mn = document.querySelector('#mn'),
+-        sc = document.querySelector('#sc');
+-
+-    setInterval(() => {
+-        let day = new Date();
+-        let hh = day.getHours() * 30;
+-        let mm = day.getMinutes() * deg;
+-        let ss = day.getSeconds() * deg;
+ 
+-        hr.style.transform = `rotateZ(${(hh) + (mm / 12)}deg)`;
+-        mn.style.transform = `rotateZ(${mm}deg)`;
+-        sc.style.transform = `rotateZ(${ss}deg)`;
+-    }, 1000)
+-
+-</script>
+ </body>
+ </html>
