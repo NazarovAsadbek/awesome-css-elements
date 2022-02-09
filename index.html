@@ -9,10 +9,71 @@
 </head>
 <body>
 
-<div class="container">
-    <img src="rocket.svg" id="rocket" alt="rocket">
-</div>
+<section>
+    <img src="stars.png" alt="stars" id="stars">
+    <img src="moon.png" alt="stars" id="moon">
+    <img src="mountains_behind.png" alt="mountains_behind" id="mountains_behind">
+    <h2 id="text">Anime <span>JS</span></h2>
+    <a href="#" id="btn">Play</a>
+    <img src="mountains_front.png" alt="mountains_front" id="mountains_front">
+</section>
 
+<script src="anime.min.js"></script>
+<script>
+    var animation = anime.timeline({
+        autoplay: false
+    })
+    animation
+        .add({
+            targets: '#btn',
+            top: '1500px',
+            duration: 500,
+            easing: 'easeInOutSine'
+        })
+
+        .add({
+            targets: '#stars',
+            top: '0px',
+            duration: 1000,
+            easing: 'easeInOutSine'
+        })
+
+        .add({
+            targets: '#mountains_behind',
+            bottom: '0px',
+            duration: 1000,
+            easing: 'easeInOutSine'
+        })
+
+        .add({
+            targets: '#moon',
+            top: '0px',
+            duration: 1000,
+            easing: 'easeInOutBack'
+        })
+
+        .add({
+            targets: '#mountains_front',
+            bottom: '0px',
+            duration: 1000,
+            easing: 'easeInOutSine'
+        })
+
+        .add({
+            targets: '#text',
+            marginRight: '0px',
+            duration: 1000,
+            easing: 'easeInOutBack'
+        })
+        .add({
+            targets: '#btn',
+            top: '50%',
+            duration: 1000,
+            easing: 'easeInOutBack'
+        })
+
+    document.querySelector('#btn').onclick = animation.play;
+</script>
 <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>

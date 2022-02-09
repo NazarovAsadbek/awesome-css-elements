@@ -13,29 +13,74 @@ body
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    overflow: hidden;
+    background: linear-gradient(#2b1055, #7597de);
 }
-.container
+section
 {
     position: relative;
-    height: 300px;
-    width: 300px;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
 }
-.container #rocket
+section img
 {
     position: absolute;
+    top: 0;
     left: 0;
-    right: 0;
-    bottom: -300px;
-    animation: fly 10s .5s ease-in;
+    width: 100%;
+    pointer-events: none;
 }
-@keyframes fly {
-    0%{ bottom: -300px; }
-    100%{ bottom: 100%; }
+section img#moon
+{
+    top: -100%;
+    mix-blend-mode: screen;
+
 }
-
-
-
-
-
-
+section img#stars
+{
+    top: -100%;
+    height: 100%;
+    object-fit: cover;
+}
+section img#mountains_behind
+{
+    bottom: -100%;
+    top: initial;
+}
+section img#mountains_front
+{
+    bottom: -150%;
+    top: initial;
+    z-index: 1000;
+}
+#text
+{
+    position: absolute;
+    color: #fff;
+    font-size: 6vw;
+    font-weight: 200;
+    margin-right: -3000px;
+}
+#text span
+{
+    font-weight: 700;
+}
+#btn
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: 80px;
+    transform: translate(-50%, -50%);
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 50px;
+    background: #ffffff;
+    border-radius: 40px;
+    font-size: 1.4em;
+    color: #2b1055;
+    z-index: 10000;
+}
