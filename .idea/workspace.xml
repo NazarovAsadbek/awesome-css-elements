@@ -5,11 +5,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="203879ca-0aa0-4fed-bbcd-ec00161efd08" name="Changes" comment="added link stylesheet">
-      <change afterPath="$PROJECT_DIR$/rainyday.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OrbitControls.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/negx.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/negy.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/negz.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/posx.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/posy.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/posz.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/readme.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/three.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_03_02_2022_22_14_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_03_02_2022_22_14__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Image Source _ Attribution.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/anime.min.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/invalid.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/moon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mountains_behind.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mountains_front.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/stars.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/valid.png" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,6 +71,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\projects\yourself\awesome-css-elements" />
       <recent name="D:\Работа\yourself\awesome-css-elements" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -76,7 +92,13 @@
       <workItem from="1643866591289" duration="78000" />
       <workItem from="1643908401742" duration="7909000" />
       <workItem from="1643952628449" duration="238000" />
-      <workItem from="1644174432665" duration="2223000" />
+      <workItem from="1644174432665" duration="2408000" />
+      <workItem from="1644261368863" duration="1994000" />
+      <workItem from="1644299296043" duration="2210000" />
+      <workItem from="1644303332225" duration="2544000" />
+      <workItem from="1644348078824" duration="2698000" />
+      <workItem from="1644432802595" duration="4324000" />
+      <workItem from="1644522976277" duration="1422000" />
     </task>
     <task id="LOCAL-00001" summary="added link stylesheet">
       <created>1643729550739</created>

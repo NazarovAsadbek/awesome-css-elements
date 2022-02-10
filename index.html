@@ -6,74 +6,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="style.css">
     <title>Document</title>
+    <script src="three.min.js"></script>
+    <script src="OrbitControls.js"></script>
 </head>
 <body>
 
-<section>
-    <img src="stars.png" alt="stars" id="stars">
-    <img src="moon.png" alt="stars" id="moon">
-    <img src="mountains_behind.png" alt="mountains_behind" id="mountains_behind">
-    <h2 id="text">Anime <span>JS</span></h2>
-    <a href="#" id="btn">Play</a>
-    <img src="mountains_front.png" alt="mountains_front" id="mountains_front">
-</section>
 
-<script src="anime.min.js"></script>
 <script>
-    var animation = anime.timeline({
-        autoplay: false
-    })
-    animation
-        .add({
-            targets: '#btn',
-            top: '1500px',
-            duration: 500,
-            easing: 'easeInOutSine'
-        })
+    let scene, camera, renderer, sphereCamera;
 
-        .add({
-            targets: '#stars',
-            top: '0px',
-            duration: 1000,
-            easing: 'easeInOutSine'
-        })
+    function init() {
+        scene = new THREE.Scene();
+        camera = new THREE.PerspectiveCamera(70,
+            window.innerWidth / window.innerHeight,
+            1, 5000
+        );
+        camera.position.set(0, 400, 1000);
 
-        .add({
-            targets: '#mountains_behind',
-            bottom: '0px',
-            duration: 1000,
-            easing: 'easeInOutSine'
-        })
+        renderer = new THREE.WebGLRenderer({antialias: true});
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        document.body.appendChild(renderer.domElement);
+        let controls = new THREE.OrbitControls(camera, renderer.domElement);
+        controls.enableZoom = false;
 
-        .add({
-            targets: '#moon',
-            top: '0px',
-            duration: 1000,
-            easing: 'easeInOutBack'
-        })
+        let urls = [
+            'posx.jpg', 'negx.jpg',
+            'posy.jpg', 'negy.jpg',
+            'posz.jpg', 'negz.jpg',
+        ];
+        let loader = new THREE.CubeTextureLoader();
+        scene.background = loader.load(urls);
+        sphereCamera = new THREE.CubeCamera(1, 1000, 5000);
+        sphereCamera.position.set(0, 100, 0);
+        scene.add(sphereCamera);
+        let sphereMaterial = new THREE.MeshBasicMaterial({
+            envMap: sphereCamera.renderTarget
+        });
+        let sphereGeo = new THREE.SphereGeometry(350, 50, 50);
+        let sphere = new THREE.Mesh(sphereGeo, sphereMaterial);
+        sphere.position.set(0, 100, 0);
+        scene.add(sphere);
+        render();
+    }
 
-        .add({
-            targets: '#mountains_front',
-            bottom: '0px',
-            duration: 1000,
-            easing: 'easeInOutSine'
-        })
+    function render() {
+        renderer.render(scene, camera);
+        sphereCamera.updateCubeMap(renderer, scene);
+        requestAnimationFrame(render);
+    }
 
-        .add({
-            targets: '#text',
-            marginRight: '0px',
-            duration: 1000,
-            easing: 'easeInOutBack'
-        })
-        .add({
-            targets: '#btn',
-            top: '50%',
-            duration: 1000,
-            easing: 'easeInOutBack'
-        })
-
-    document.querySelector('#btn').onclick = animation.play;
+    init();
 </script>
+
 <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>
